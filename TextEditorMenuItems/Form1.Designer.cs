@@ -28,13 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.File = new System.Windows.Forms.MenuStrip();
+            this.SuspendLayout();
+            // 
+            // File
+            // 
+            this.File.Location = new System.Drawing.Point(0, 0);
+            this.File.Name = "File";
+            this.File.Size = new System.Drawing.Size(800, 24);
+            this.File.TabIndex = 0;
+            this.File.Text = "File";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.File);
+            this.MainMenuStrip = this.File;
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.MenuStrip File;
     }
 }
 
