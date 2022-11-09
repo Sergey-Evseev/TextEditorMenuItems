@@ -13,10 +13,12 @@ using System.ComponentModel;
 
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TextEditorMenuItems
 {
@@ -38,6 +40,13 @@ namespace TextEditorMenuItems
 
             cutToolStripMenuItem.Click += cutToolStripMenuItem_Click;   
             cutToolStripButton.Click += cutToolStripMenuItem_Click;
+
+            contextMenuStrip1 = new ContextMenuStrip();
+            contextMenuStrip1.Items.Add("New");
+            contextMenuStrip1.Items.Add("Open");
+            contextMenuStrip1.Items.Add("Cut");
+            contextMenuStrip1.Items.Add("Copy");
+            contextMenuStrip1.Items.Add("Insert");
         }       
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
@@ -48,7 +57,16 @@ namespace TextEditorMenuItems
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = 
+            dialog.InitialDirectory = "C:\\";
+            dialog.Filter = "All Files(*.*)|*.*|Text Files(*txt)|*.txt";
+            dialog.FilterIndex = 2;
+            
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                textBox.ReadOnly = false;
+                contextMenuStrip1.Enabled = true;
+
+            }
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)

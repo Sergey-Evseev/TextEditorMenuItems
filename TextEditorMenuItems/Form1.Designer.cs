@@ -57,6 +57,7 @@
             this.colorFontToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.colorBackToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.fontToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.textBox = new System.Windows.Forms.TextBox();
             this.File.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -291,16 +292,26 @@
             this.fontToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.fontToolStripButton.Text = "Font";
             // 
+            // textBox
+            // 
+            this.textBox.Location = new System.Drawing.Point(0, 52);
+            this.textBox.Multiline = true;
+            this.textBox.Name = "textBox";
+            this.textBox.Size = new System.Drawing.Size(664, 317);
+            this.textBox.TabIndex = 3;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(664, 371);
+            this.Controls.Add(this.textBox);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.File);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.File;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Text Editor";
             this.File.ResumeLayout(false);
             this.File.PerformLayout();
@@ -340,6 +351,7 @@
         private System.Windows.Forms.ToolStripButton colorFontToolStripButton;
         private System.Windows.Forms.ToolStripButton colorBackToolStripButton;
         private System.Windows.Forms.ToolStripButton fontToolStripButton;
+        private System.Windows.Forms.TextBox textBox;
     }
 }
 
