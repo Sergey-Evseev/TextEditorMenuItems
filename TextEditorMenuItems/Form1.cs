@@ -15,6 +15,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,14 +25,17 @@ namespace TextEditorMenuItems
 {
     public partial class Form1 : Form
     {
+        
+        //переменная для хранения адреса файла
+        public string path { get; set; } = ""; ///
         public Form1()
         {
             InitializeComponent();
-            newToolStripMenuItem.Click += newToolStripMenuItem_Click;
-            newToolStripButton.Click += newToolStripMenuItem_Click;
+            newToolStripMenuItem.Click += newToolStripMenuItem_Click; ////////
+            newToolStripButton.Click += newToolStripMenuItem_Click;   ///////
 
-            openToolStripMenuItem.Click += openToolStripMenuItem_Click;
-            openToolStripButton.Click += openToolStripMenuItem_Click;
+            openToolStripMenuItem.Click += openToolStripMenuItem_Click; //
+            openToolStripButton.Click += openToolStripMenuItem_Click; //
 
             saveToolStripMenuItem.Click += saveToolStripMenuItem_Click;
             saveToolStripButton.Click += saveToolStripMenuItem_Click;
@@ -40,16 +44,44 @@ namespace TextEditorMenuItems
 
             cutToolStripMenuItem.Click += cutToolStripMenuItem_Click;   
             cutToolStripButton.Click += cutToolStripMenuItem_Click;
-
-            contextMenuStrip1 = new ContextMenuStrip();
+                        
             
         }       
 
+        //обработчик нажатия кнопки "New" меню File и панели инструментов
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            SaveFileDialog dialog = new SaveFileDialog();            
+            dialog.Filter = "All Files(*.*)|*.*|Text Files(*.txt)|*.txt";
+            dialog.FilterIndex = 2;
 
-        }
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                textBox.ReadOnly = false;
+                contextMenuStrip1.Enabled = true;
+                saveToolStripMenuItem.Enabled = true;
+                saveAsToolStripMenuItem.Enabled = true;
+                cutToolStripMenuItem.Enabled = true;
+                copyToolStripMenuItem.Enabled = true;
+                insertToolStripMenuItem.Enabled = true;
+                cancelToolStripMenuItem.Enabled = true;
+                selectAllToolStripMenuItem.Enabled = true;
 
+                saveToolStripButton.Enabled = true;
+                CopyToolStripButton.Enabled = true;
+                cutToolStripButton.Enabled = true;
+                insertToolStripButton.Enabled = true;
+
+                path = dialog.FileName;
+                Text = $"Text editor - {path}";
+                StreamWriter writing = new StreamWriter(path, false, Encoding.Default);
+                writing.Write(textBox.Text);
+                writing.Close();
+            }
+
+        }//
+
+        //обработчик открытия файла
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
@@ -59,11 +91,28 @@ namespace TextEditorMenuItems
             
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                textBox.ReadOnly = false;
-                contextMenuStrip1.Enabled = true;
+                textBox.ReadOnly = false; //
+                contextMenuStrip1.Enabled = true; //
+                saveToolStripMenuItem.Enabled = true; //
+                saveAsToolStripMenuItem.Enabled = true; //
+                cutToolStripMenuItem.Enabled = true; //
+                copyToolStripMenuItem.Enabled = true; //
+                insertToolStripMenuItem.Enabled = true; //
+                cancelToolStripMenuItem.Enabled = true; //
+                selectAllToolStripMenuItem.Enabled = true; //
 
+                saveToolStripButton.Enabled = true; //
+                CopyToolStripButton.Enabled = true; //
+                cutToolStripButton.Enabled = true; //
+                insertToolStripButton.Enabled = true; //
+
+                path = dialog.FileName; //
+                Text = $"Text editor - {path}"; //
+                StreamReader reader = new StreamReader(dialog.FileName, Encoding.Default); //
+                textBox.Text = reader.ReadToEnd(); //
+                reader.Close(); //
             }
-        }
+        } //
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
