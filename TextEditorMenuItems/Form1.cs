@@ -42,11 +42,7 @@ namespace TextEditorMenuItems
             cutToolStripButton.Click += cutToolStripMenuItem_Click;
 
             contextMenuStrip1 = new ContextMenuStrip();
-            contextMenuStrip1.Items.Add("New");
-            contextMenuStrip1.Items.Add("Open");
-            contextMenuStrip1.Items.Add("Cut");
-            contextMenuStrip1.Items.Add("Copy");
-            contextMenuStrip1.Items.Add("Insert");
+            
         }       
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
