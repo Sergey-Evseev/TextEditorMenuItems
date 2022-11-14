@@ -44,10 +44,10 @@ namespace TextEditorMenuItems
 
             selectAllToolStripMenuItem.Click += selectAllToolStripMenuItem_Click; //
 
-            copyContextMenuStrip.Click += CopyToolStripButton_Click; //
+            copyContextMenuStrip.Click += CopyToolStripMenuItem_Click; //
             copyToolStripMenuItem.Click += CopyToolStripMenuItem_Click; //
-            CopyToolStripButton.Click += CopyToolStripButton_Click1; //
-            
+            CopyToolStripButton.Click += CopyToolStripMenuItem_Click; //
+
             cutToolStripMenuItem.Click += cutToolStripMenuItem_Click; //  
             cutToolStripButton.Click += cutToolStripMenuItem_Click; //
             cutContextMenuStrip.Click += cutToolStripMenuItem_Click; //
@@ -60,22 +60,12 @@ namespace TextEditorMenuItems
         private void cancelToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ///посмотреть MSDN по ссылке Павла
-        }
-
-        private void CopyToolStripButton_Click1(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+        }             
 
         private void CopyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
-        }
-        private void CopyToolStripButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
+            textBox.Copy();
+        } //
 
         //обработчик нажатия кнопки "New" меню File и панели инструментов
         private void newToolStripMenuItem_Click(object sender, EventArgs e)

@@ -142,6 +142,7 @@
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
             this.copyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.copyToolStripMenuItem.Text = "Copy";
+            this.copyToolStripMenuItem.Click += new System.EventHandler(this.CopyToolStripMenuItem_Click);
             // 
             // insertToolStripMenuItem
             // 
@@ -206,6 +207,7 @@
             this.copyContextMenuStrip.Name = "copyContextMenuStrip";
             this.copyContextMenuStrip.Size = new System.Drawing.Size(180, 22);
             this.copyContextMenuStrip.Text = "Copy ";
+            this.copyContextMenuStrip.Click += new System.EventHandler(this.CopyToolStripMenuItem_Click);
             // 
             // cutContextMenuStrip
             // 
@@ -283,7 +285,7 @@
             this.CopyToolStripButton.Name = "CopyToolStripButton";
             this.CopyToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.CopyToolStripButton.Text = "Copy";
-            this.CopyToolStripButton.Click += new System.EventHandler(this.CopyToolStripButton_Click);
+            this.CopyToolStripButton.Click += new System.EventHandler(this.CopyToolStripMenuItem_Click);
             // 
             // cutToolStripButton
             // 
