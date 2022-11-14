@@ -57,9 +57,14 @@ namespace TextEditorMenuItems
             
         }
 
-        private void cancelToolStripMenuItem_Click(object sender, EventArgs e)
+        private void cancelToolStripMenuItem_Click(object sender, EventArgs e) //
+        //https://learn.microsoft.com/ru-ru/dotnet/api/system.windows.forms.textboxbase.canundo?view=windowsdesktop-7.0
         {
-            ///посмотреть MSDN по ссылке Павла
+            if (textBox.CanUndo == true) //если метод возвращает true 
+            {
+                textBox.Undo(); //то можно вызвать Undo метод для отмены посл. операции
+                textBox.ClearUndo(); //очистка буфера чтобы предотвратить redo
+            }
         }             
 
         private void CopyToolStripMenuItem_Click(object sender, EventArgs e)
