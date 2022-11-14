@@ -47,6 +47,10 @@
             this.backColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.copyContextMenuStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.cutContextMenuStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.insertContextMenuStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.cancelContextMenuStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -58,10 +62,6 @@
             this.colorBackToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.fontToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.textBox = new System.Windows.Forms.TextBox();
-            this.copyContextMenuStrip = new System.Windows.Forms.ToolStripMenuItem();
-            this.cutContextMenuStrip = new System.Windows.Forms.ToolStripMenuItem();
-            this.insertContextMenuStrip = new System.Windows.Forms.ToolStripMenuItem();
-            this.cancelContextMenuStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.File.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -154,6 +154,7 @@
             this.cancelToolStripMenuItem.Name = "cancelToolStripMenuItem";
             this.cancelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cancelToolStripMenuItem.Text = "Cancel";
+            this.cancelToolStripMenuItem.Click += new System.EventHandler(this.cancelToolStripMenuItem_Click);
             // 
             // selectAllToolStripMenuItem
             // 
@@ -175,19 +176,19 @@
             // fontColorToolStripMenuItem
             // 
             this.fontColorToolStripMenuItem.Name = "fontColorToolStripMenuItem";
-            this.fontColorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fontColorToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.fontColorToolStripMenuItem.Text = "Font Color";
             // 
             // backColorToolStripMenuItem
             // 
             this.backColorToolStripMenuItem.Name = "backColorToolStripMenuItem";
-            this.backColorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.backColorToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.backColorToolStripMenuItem.Text = "Back Color";
             // 
             // fontToolStripMenuItem
             // 
             this.fontToolStripMenuItem.Name = "fontToolStripMenuItem";
-            this.fontToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fontToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.fontToolStripMenuItem.Text = "Font";
             // 
             // contextMenuStrip1
@@ -198,7 +199,32 @@
             this.insertContextMenuStrip,
             this.cancelContextMenuStrip});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(111, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 114);
+            // 
+            // copyContextMenuStrip
+            // 
+            this.copyContextMenuStrip.Name = "copyContextMenuStrip";
+            this.copyContextMenuStrip.Size = new System.Drawing.Size(180, 22);
+            this.copyContextMenuStrip.Text = "Copy ";
+            // 
+            // cutContextMenuStrip
+            // 
+            this.cutContextMenuStrip.Name = "cutContextMenuStrip";
+            this.cutContextMenuStrip.Size = new System.Drawing.Size(180, 22);
+            this.cutContextMenuStrip.Text = "Cut";
+            // 
+            // insertContextMenuStrip
+            // 
+            this.insertContextMenuStrip.Name = "insertContextMenuStrip";
+            this.insertContextMenuStrip.Size = new System.Drawing.Size(180, 22);
+            this.insertContextMenuStrip.Text = "Insert";
+            // 
+            // cancelContextMenuStrip
+            // 
+            this.cancelContextMenuStrip.Name = "cancelContextMenuStrip";
+            this.cancelContextMenuStrip.Size = new System.Drawing.Size(180, 22);
+            this.cancelContextMenuStrip.Text = "Cancel";
+            this.cancelContextMenuStrip.Click += new System.EventHandler(this.cancelToolStripMenuItem_Click);
             // 
             // toolStrip1
             // 
@@ -312,30 +338,6 @@
             this.textBox.Name = "textBox";
             this.textBox.Size = new System.Drawing.Size(664, 317);
             this.textBox.TabIndex = 3;
-            // 
-            // copyContextMenuStrip
-            // 
-            this.copyContextMenuStrip.Name = "copyContextMenuStrip";
-            this.copyContextMenuStrip.Size = new System.Drawing.Size(180, 22);
-            this.copyContextMenuStrip.Text = "Copy ";
-            // 
-            // cutContextMenuStrip
-            // 
-            this.cutContextMenuStrip.Name = "cutContextMenuStrip";
-            this.cutContextMenuStrip.Size = new System.Drawing.Size(180, 22);
-            this.cutContextMenuStrip.Text = "Cut";
-            // 
-            // insertContextMenuStrip
-            // 
-            this.insertContextMenuStrip.Name = "insertContextMenuStrip";
-            this.insertContextMenuStrip.Size = new System.Drawing.Size(180, 22);
-            this.insertContextMenuStrip.Text = "Insert";
-            // 
-            // cancelContextMenuStrip
-            // 
-            this.cancelContextMenuStrip.Name = "cancelContextMenuStrip";
-            this.cancelContextMenuStrip.Size = new System.Drawing.Size(180, 22);
-            this.cancelContextMenuStrip.Text = "Cancel";
             // 
             // Form1
             // 

@@ -51,9 +51,15 @@ namespace TextEditorMenuItems
             cutToolStripMenuItem.Click += cutToolStripMenuItem_Click; //  
             cutToolStripButton.Click += cutToolStripMenuItem_Click; //
             cutContextMenuStrip.Click += cutToolStripMenuItem_Click; //
+
+            cancelContextMenuStrip.Click += cancelToolStripMenuItem_Click;//
+            cancelToolStripMenuItem.Click += cancelToolStripMenuItem_Click; // 
             
-                        
-            
+        }
+
+        private void cancelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ///посмотреть MSDN по ссылке Павла
         }
 
         private void CopyToolStripButton_Click1(object sender, EventArgs e)
@@ -65,6 +71,11 @@ namespace TextEditorMenuItems
         {
             throw new NotImplementedException();
         }
+        private void CopyToolStripButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
         //обработчик нажатия кнопки "New" меню File и панели инструментов
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
@@ -163,17 +174,12 @@ namespace TextEditorMenuItems
 
         private void cutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-        }
-
+            textBox.Cut();
+        } /// 
+   
         private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)
         {
             textBox.SelectAll();
         } //
-
-        private void CopyToolStripButton_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
