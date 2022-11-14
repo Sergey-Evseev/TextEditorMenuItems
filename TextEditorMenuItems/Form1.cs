@@ -37,16 +37,34 @@ namespace TextEditorMenuItems
             openToolStripMenuItem.Click += openToolStripMenuItem_Click; //
             openToolStripButton.Click += openToolStripMenuItem_Click; //
 
-            saveToolStripMenuItem.Click += saveToolStripMenuItem_Click;
-            saveToolStripButton.Click += saveToolStripMenuItem_Click;
+            saveToolStripMenuItem.Click += saveToolStripMenuItem_Click; ///
+            saveToolStripButton.Click += saveToolStripMenuItem_Click; /////
             
-            saveAsToolStripMenuItem.Click += saveAsToolStripMenuItem_Click; 
+            saveAsToolStripMenuItem.Click += saveAsToolStripMenuItem_Click; ////
 
-            cutToolStripMenuItem.Click += cutToolStripMenuItem_Click;   
-            cutToolStripButton.Click += cutToolStripMenuItem_Click;
+            selectAllToolStripMenuItem.Click += selectAllToolStripMenuItem_Click; //
+
+            copyContextMenuStrip.Click += CopyToolStripButton_Click; //
+            copyToolStripMenuItem.Click += CopyToolStripMenuItem_Click; //
+            CopyToolStripButton.Click += CopyToolStripButton_Click1; //
+            
+            cutToolStripMenuItem.Click += cutToolStripMenuItem_Click; //  
+            cutToolStripButton.Click += cutToolStripMenuItem_Click; //
+            cutContextMenuStrip.Click += cutToolStripMenuItem_Click; //
+            
                         
             
-        }       
+        }
+
+        private void CopyToolStripButton_Click1(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void CopyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
 
         //обработчик нажатия кнопки "New" меню File и панели инструментов
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
@@ -113,18 +131,47 @@ namespace TextEditorMenuItems
                 reader.Close(); //
             }
         } //
+        
+        //обработчик сохранения файла
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = "All Files(*.*)|*.*|Text Files(*txt)|*.txt";
+            dialog.FilterIndex = 2;
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                Text = $"Text editor - {dialog.FileName}";
+                path = dialog.FileName;
+                StreamWriter writer = new StreamWriter(dialog.FileName, false,
+                    Encoding.Default);
+                writer.Write(textBox.Text);
+                writer.Close();
+            }
+        } //
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (path != "")
+            {
+                StreamWriter writer = new StreamWriter(path, false, Encoding.Default);
+                writer.Write(textBox.Text);
+                writer.Close();
+            }
+            else MessageBox.Show("Choose file for saving!", "Warning", 
+                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }//
 
-        }
-
-        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void cutToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void cutToolStripMenuItem_Click(object sender, EventArgs e)
+        private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            textBox.SelectAll();
+        } //
+
+        private void CopyToolStripButton_Click(object sender, EventArgs e)
         {
 
         }
