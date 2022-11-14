@@ -106,6 +106,7 @@ namespace TextEditorMenuItems
         }//
 
         //обработчик открытия файла
+        // https://metanit.com/sharp/windowsforms/4.20.php
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();

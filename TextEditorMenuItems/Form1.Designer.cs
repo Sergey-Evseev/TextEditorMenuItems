@@ -177,8 +177,9 @@
             // fontColorToolStripMenuItem
             // 
             this.fontColorToolStripMenuItem.Name = "fontColorToolStripMenuItem";
-            this.fontColorToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.fontColorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.fontColorToolStripMenuItem.Text = "Font Color";
+            this.fontColorToolStripMenuItem.Click += new System.EventHandler(this.fontColorToolStripMenuItem_Click);
             // 
             // backColorToolStripMenuItem
             // 
@@ -200,7 +201,7 @@
             this.insertContextMenuStrip,
             this.cancelContextMenuStrip});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 114);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(111, 92);
             // 
             // copyContextMenuStrip
             // 
@@ -313,6 +314,7 @@
             this.colorFontToolStripButton.Name = "colorFontToolStripButton";
             this.colorFontToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.colorFontToolStripButton.Text = "Font Color";
+            this.colorFontToolStripButton.Click += new System.EventHandler(this.fontColorToolStripMenuItem_Click);
             // 
             // colorBackToolStripButton
             // 
