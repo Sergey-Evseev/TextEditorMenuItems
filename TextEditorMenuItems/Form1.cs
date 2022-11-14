@@ -52,9 +52,21 @@ namespace TextEditorMenuItems
             cutToolStripButton.Click += cutToolStripMenuItem_Click; //
             cutContextMenuStrip.Click += cutToolStripMenuItem_Click; //
 
+            insertToolStripMenuItem.Click += insertToolStripMenuItem_Click; //
+            insertToolStripButton.Click += insertToolStripMenuItem_Click; //
+            insertContextMenuStrip.Click += insertToolStripMenuItem_Click; //
+
             cancelContextMenuStrip.Click += cancelToolStripMenuItem_Click;//
             cancelToolStripMenuItem.Click += cancelToolStripMenuItem_Click; // 
+
+            fontColorToolStripMenuItem.Click += fontColorToolStripMenuItem_Click; //
+            colorFontToolStripButton.Click += fontColorToolStripMenuItem_Click; //
+
+            fontToolStripMenuItem.Click += fontToolStripMenuItem_Click; //
+            fontToolStripButton.Click += fontToolStripMenuItem_Click;    //         
             
+            backColorToolStripMenuItem.Click += backColorToolStripMenuItem_Click; //
+            colorBackToolStripButton.Click += backColorToolStripMenuItem_Click; //
         }
 
         private void cancelToolStripMenuItem_Click(object sender, EventArgs e) //
@@ -81,20 +93,20 @@ namespace TextEditorMenuItems
 
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                textBox.ReadOnly = false;
-                contextMenuStrip1.Enabled = true;
-                saveToolStripMenuItem.Enabled = true;
-                saveAsToolStripMenuItem.Enabled = true;
-                cutToolStripMenuItem.Enabled = true;
-                copyToolStripMenuItem.Enabled = true;
-                insertToolStripMenuItem.Enabled = true;
-                cancelToolStripMenuItem.Enabled = true;
-                selectAllToolStripMenuItem.Enabled = true;
+                //textBox.ReadOnly = false;
+                //contextMenuStrip1.Enabled = true;
+                //saveToolStripMenuItem.Enabled = true;
+                //saveAsToolStripMenuItem.Enabled = true;
+                //cutToolStripMenuItem.Enabled = true;
+                //copyToolStripMenuItem.Enabled = true;
+                //insertToolStripMenuItem.Enabled = true;
+                //cancelToolStripMenuItem.Enabled = true;
+                //selectAllToolStripMenuItem.Enabled = true;
 
-                saveToolStripButton.Enabled = true;
-                CopyToolStripButton.Enabled = true;
-                cutToolStripButton.Enabled = true;
-                insertToolStripButton.Enabled = true;
+                //saveToolStripButton.Enabled = true;
+                //CopyToolStripButton.Enabled = true;
+                //cutToolStripButton.Enabled = true;
+                //insertToolStripButton.Enabled = true;
 
                 path = dialog.FileName;
                 Text = $"Text editor - {path}";
@@ -106,31 +118,16 @@ namespace TextEditorMenuItems
         }//
 
         //обработчик открытия файла
-        // https://metanit.com/sharp/windowsforms/4.20.php
+        //Tutorial (open and save): https://metanit.com/sharp/windowsforms/4.20.php
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
             dialog.InitialDirectory = "C:\\";
             dialog.Filter = "All Files(*.*)|*.*|Text Files(*txt)|*.txt";
             dialog.FilterIndex = 2;
-            
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                textBox.ReadOnly = false; //
-                contextMenuStrip1.Enabled = true; //
-                saveToolStripMenuItem.Enabled = true; //
-                saveAsToolStripMenuItem.Enabled = true; //
-                cutToolStripMenuItem.Enabled = true; //
-                copyToolStripMenuItem.Enabled = true; //
-                insertToolStripMenuItem.Enabled = true; //
-                cancelToolStripMenuItem.Enabled = true; //
-                selectAllToolStripMenuItem.Enabled = true; //
 
-                saveToolStripButton.Enabled = true; //
-                CopyToolStripButton.Enabled = true; //
-                cutToolStripButton.Enabled = true; //
-                insertToolStripButton.Enabled = true; //
-
+            if (dialog.ShowDialog() == DialogResult.Cancel) return;
+            else {
                 path = dialog.FileName; //
                 Text = $"Text editor - {path}"; //
                 StreamReader reader = new StreamReader(dialog.FileName, Encoding.Default); //
@@ -176,6 +173,38 @@ namespace TextEditorMenuItems
         private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)
         {
             textBox.SelectAll();
+        } //
+
+        private void fontColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ColorDialog dialog = new ColorDialog();
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                textBox.ForeColor = dialog.Color;
+            }
+        } //
+
+        private void backColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ColorDialog dialog = new ColorDialog();
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                textBox.BackColor = dialog.Color;
+            }
+        } //
+
+        private void fontToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FontDialog dialog = new FontDialog();
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                textBox.Font = dialog.Font;
+            }
+        } //
+
+        private void insertToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            textBox.Paste();
         } //
     }
 }

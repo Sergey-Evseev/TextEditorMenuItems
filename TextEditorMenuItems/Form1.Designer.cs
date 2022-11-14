@@ -204,11 +204,12 @@
             this.insertContextMenuStrip,
             this.cancelContextMenuStrip});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 114);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(152, 92);
             // 
             // copyContextMenuStrip
             // 
             this.copyContextMenuStrip.Name = "copyContextMenuStrip";
+            this.copyContextMenuStrip.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
             this.copyContextMenuStrip.Size = new System.Drawing.Size(180, 22);
             this.copyContextMenuStrip.Text = "Copy ";
             this.copyContextMenuStrip.Click += new System.EventHandler(this.CopyToolStripMenuItem_Click);
@@ -216,20 +217,23 @@
             // cutContextMenuStrip
             // 
             this.cutContextMenuStrip.Name = "cutContextMenuStrip";
-            this.cutContextMenuStrip.Size = new System.Drawing.Size(180, 22);
+            this.cutContextMenuStrip.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
+            this.cutContextMenuStrip.Size = new System.Drawing.Size(151, 22);
             this.cutContextMenuStrip.Text = "Cut";
             // 
             // insertContextMenuStrip
             // 
             this.insertContextMenuStrip.Name = "insertContextMenuStrip";
-            this.insertContextMenuStrip.Size = new System.Drawing.Size(180, 22);
+            this.insertContextMenuStrip.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
+            this.insertContextMenuStrip.Size = new System.Drawing.Size(151, 22);
             this.insertContextMenuStrip.Text = "Insert";
             this.insertContextMenuStrip.Click += new System.EventHandler(this.insertToolStripMenuItem_Click);
             // 
             // cancelContextMenuStrip
             // 
             this.cancelContextMenuStrip.Name = "cancelContextMenuStrip";
-            this.cancelContextMenuStrip.Size = new System.Drawing.Size(180, 22);
+            this.cancelContextMenuStrip.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
+            this.cancelContextMenuStrip.Size = new System.Drawing.Size(151, 22);
             this.cancelContextMenuStrip.Text = "Cancel";
             this.cancelContextMenuStrip.Click += new System.EventHandler(this.cancelToolStripMenuItem_Click);
             // 
