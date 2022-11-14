@@ -149,6 +149,7 @@
             this.insertToolStripMenuItem.Name = "insertToolStripMenuItem";
             this.insertToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.insertToolStripMenuItem.Text = "Insert";
+            this.insertToolStripMenuItem.Click += new System.EventHandler(this.insertToolStripMenuItem_Click);
             // 
             // cancelToolStripMenuItem
             // 
@@ -184,14 +185,16 @@
             // backColorToolStripMenuItem
             // 
             this.backColorToolStripMenuItem.Name = "backColorToolStripMenuItem";
-            this.backColorToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.backColorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.backColorToolStripMenuItem.Text = "Back Color";
+            this.backColorToolStripMenuItem.Click += new System.EventHandler(this.backColorToolStripMenuItem_Click);
             // 
             // fontToolStripMenuItem
             // 
             this.fontToolStripMenuItem.Name = "fontToolStripMenuItem";
-            this.fontToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.fontToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.fontToolStripMenuItem.Text = "Font";
+            this.fontToolStripMenuItem.Click += new System.EventHandler(this.fontToolStripMenuItem_Click);
             // 
             // contextMenuStrip1
             // 
@@ -201,7 +204,7 @@
             this.insertContextMenuStrip,
             this.cancelContextMenuStrip});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(111, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 114);
             // 
             // copyContextMenuStrip
             // 
@@ -221,6 +224,7 @@
             this.insertContextMenuStrip.Name = "insertContextMenuStrip";
             this.insertContextMenuStrip.Size = new System.Drawing.Size(180, 22);
             this.insertContextMenuStrip.Text = "Insert";
+            this.insertContextMenuStrip.Click += new System.EventHandler(this.insertToolStripMenuItem_Click);
             // 
             // cancelContextMenuStrip
             // 
@@ -305,6 +309,7 @@
             this.insertToolStripButton.Name = "insertToolStripButton";
             this.insertToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.insertToolStripButton.Text = "Insert";
+            this.insertToolStripButton.Click += new System.EventHandler(this.insertToolStripMenuItem_Click);
             // 
             // colorFontToolStripButton
             // 
@@ -324,6 +329,7 @@
             this.colorBackToolStripButton.Name = "colorBackToolStripButton";
             this.colorBackToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.colorBackToolStripButton.Text = "Back Color";
+            this.colorBackToolStripButton.Click += new System.EventHandler(this.backColorToolStripMenuItem_Click);
             // 
             // fontToolStripButton
             // 
@@ -333,6 +339,7 @@
             this.fontToolStripButton.Name = "fontToolStripButton";
             this.fontToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.fontToolStripButton.Text = "Font";
+            this.fontToolStripButton.Click += new System.EventHandler(this.fontToolStripMenuItem_Click);
             // 
             // textBox
             // 
